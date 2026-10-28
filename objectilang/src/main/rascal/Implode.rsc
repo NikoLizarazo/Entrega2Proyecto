@@ -4,6 +4,7 @@ module Implode
 
 import IO;
 import ParseTree;
+import Node;
 import Syntax;
 import AST;
 import Parser;
@@ -22,10 +23,10 @@ AST::Modulo implodeTexto(str programa) {
 
 str astComoTexto(Tree arbol) {
   ast = implodeArbol(arbol);
-  return iprintToString(ast);
+  return iprintToString(unsetRec(ast));
 }
 
 void probar() {
   ast = implodeArchivo(|project://objectilang/instance/completo.obj|);
-  iprintln(ast);
+  iprintln(unsetRec(ast));
 }
