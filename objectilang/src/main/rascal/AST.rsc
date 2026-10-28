@@ -1,8 +1,5 @@
 module AST
 
-// Objectilang - Sintaxis abstracta - Proyecto 2
-// Sebastian Leon - 202510399
-// Nicolas Lizarazo Rincon - 202511191
 
 // Modulo y programa principal
 data Modulo = modulo(list[Objeto] objetos, Principal principal);

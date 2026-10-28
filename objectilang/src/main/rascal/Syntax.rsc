@@ -1,8 +1,5 @@
 module Syntax
 
-// Objectilang - Sintaxis concreta - Proyecto 2
-// Sebastian Leon - 202510399
-// Nicolas Lizarazo Rincon - 202511191
 
 // Layout
 layout Layout = WhitespaceAndComment* !>> [\ \t\n\r];

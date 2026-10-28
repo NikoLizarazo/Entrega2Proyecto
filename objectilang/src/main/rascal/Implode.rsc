@@ -1,8 +1,6 @@
 module Implode
 
-// Objectilang - Implode - Proyecto 2
-// Sebastian Leon - 202510399
-// Nicolas Lizarazo Rincon - 202511191
+
 
 import IO;
 import ParseTree;

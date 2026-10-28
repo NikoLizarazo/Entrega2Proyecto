@@ -1,8 +1,5 @@
 module Parser
 
-// Objectilang - Parser - Proyecto 2
-// Sebastian Leon - 202510399
-// Nicolas Lizarazo Rincon - 202511191
 
 import ParseTree;
 import Syntax;
