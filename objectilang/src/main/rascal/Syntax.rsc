@@ -1,7 +1,6 @@
 module Syntax
 
 
-// Layout
 layout Layout = WhitespaceAndComment* !>> [\ \t\n\r];
 
 lexical WhitespaceAndComment = [\ \t\n\r];
@@ -81,7 +80,7 @@ syntax TipoBasico
   | texto: "String"
   ;
 
-// Acceso a miembros y metodos
+
 syntax AccesoMiembro
   = accesoMiembro: {Identifier "."}+ nombres
   ;
@@ -226,7 +225,7 @@ lexical Interpolacion
   = "$" "{" Expresion "}"
   ;
 
-// Identificadores y palabras reservadas
+// Palabras reservadas
 lexical Identifier
   = ([a-z][a-zA-Z0-9\-]* !>> [a-zA-Z0-9\-]) \ Reserved
   ;
