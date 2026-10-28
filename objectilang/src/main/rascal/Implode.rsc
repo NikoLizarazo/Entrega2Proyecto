@@ -26,6 +26,6 @@ str astComoTexto(Tree arbol) {
 }
 
 void probar() {
-  ast = implodeArchivo(|project://objectilang/instance/ejemplo.obj|);
+  ast = implodeArchivo(|project://objectilang/instance/completo.obj|);
   iprintln(ast);
 }
