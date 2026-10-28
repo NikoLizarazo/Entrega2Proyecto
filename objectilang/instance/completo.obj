@@ -1,0 +1,68 @@
+object figura(val nombre: String) {
+  method area(): Int {
+    val a = 0
+  }
+  method describir(): String {
+    val texto = "figura ${nombre}"
+  }
+}
+
+object punto extends figura (val x: Int, var y: Int) {
+  method suma(): Int {
+    val r = x + y
+  }
+  override describir(): String {
+    val texto = "punto en ${x}"
+  }
+}
+
+object caja[+t, -u, v](var contenido: t) {
+  method obtener(): t {
+    val c = contenido
+  }
+}
+
+object vacio()
+
+object contador
+
+method main {
+  val p = new punto("p1", 1, 2)
+  var total: Int = 3 * (4 + 5) ** 2
+  total = total - 1
+  p.y = 10
+  p.suma()
+  p.describir = method(prefijo: String): String {
+    val texto = "nuevo ${prefijo}"
+  }
+  val numeros: lista[Int] = new lista[Int]()
+  val tabla: mapa[String, Int] = new mapa[String, Int]()
+  val c = new caja[Int](5)
+  val especial = new contador() {
+    method incrementar(n: Int): Int {
+      val r = n + 1
+    }
+  }
+  val entero = 42
+  val decimal = 3.14
+  val letra = 'a'
+  val activo = True
+  val mensaje = "total: ${total}"
+  val potencia = -2 ** 3 ** 2
+  val operaciones = 10 / 2 + 7 % 3 - 4 * 2
+  val comparar = total >= 100 and total <= 500 or total <> 0
+  val negado = neg (total < 10) and False
+  val iguales = entero = 42
+  val mayor = if total > entero then total else entero
+  val signo = cond { total < 0 -> -1, total = 0 -> 0, total > 0 -> 1 }
+  if activo then imprimir(mensaje) else imprimir("inactivo")
+  for (n in numeros) {
+    val doble = n * 2
+    imprimir(doble)
+  }
+  for ((clave, valor) in tabla.pares()) {
+    imprimir("${clave}")
+  }
+  var mi-contador = 0
+  mi-contador = mi-contador + 1
+}

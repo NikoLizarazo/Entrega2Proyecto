@@ -1,0 +1,53 @@
+Objectilang - Proyecto 2
+Sebastian Leon - 202510399
+Nicolas Lizarazo Rincon - 202511191
+
+Cambios realizados a la gramatica de la primera entrega
+
+La gramatica base es la de la primera entrega corregida (Primera_entrega_Elementos_corregida.pdf).
+No se uso la solucion de otro grupo.
+
+1. Expresiones
+En la primera entrega las expresiones estaban por niveles (e_or, e_and, e_neg, e_comp,
+e_aritmetica, termino, potencia, unario, primario). En Rascal se dejo una sola regla Expresion
+y la precedencia se maneja con > y con left, right y non-assoc. El orden es el mismo:
+or, and, neg, comparaciones, + y -, * / y %, **, - unario y al final los primarios.
+La potencia es asociativa a la derecha y las comparaciones no son asociativas, igual que antes.
+
+2. if como expresion
+En la primera entrega if_else estaba dentro de primario. En Rascal quedo con la menor prioridad
+para que no haya ambiguedad. Si se quiere usar un if dentro de una operacion hay que ponerlo
+entre parentesis.
+
+3. Partes opcionales y agrupaciones
+Implode necesita que cada parte tenga su propia regla, entonces algunas partes que estaban
+escritas dentro de otra regla se volvieron reglas aparte:
+- ("val" | "var") ahora es Mutabilidad
+- ("+" | "-") en generico ahora es Varianza
+- (":" tipo)? en las declaraciones ahora es TipoAnotado
+- ("[" tipos "]")? en crear_o ahora es ArgumentosTipo
+- ("(" parametros_constructor? ")")? en objeto ahora es Constructor
+
+4. Listas
+Las listas de la forma x ("," x)* se escribieron con {X ","}+ o {X ","}* que es como se hace
+en Rascal.
+
+5. Espacios en blanco
+Ademas de espacio, tabulacion y salto de linea se acepta \r, porque en Windows los saltos de
+linea son \r\n.
+
+6. Palabras reservadas
+La regla de que un identifier no puede ser una palabra reservada se hizo con keyword Reserved
+y restando Reserved en Identifier.
+
+7. Nombres
+Algunos nombres se cambiaron para que fueran mas claros:
+- a_miembro ahora es AccesoMiembro
+- a_metodo ahora es LlamadaMetodo
+- crear_o ahora es CrearObjeto
+- tipo_b, tipo_o y tipo_g ahora son tipoBasico, tipoObjeto y tipoGenerico
+- unario ahora es negativo
+
+8. Resaltado de sintaxis
+Las palabras reservadas se resaltan solas. A los numeros se les puso la categoria number y a los
+strings y caracteres la categoria string para que salgan de otro color.
